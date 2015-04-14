@@ -24,4 +24,11 @@ class InquilinosModel extends CI_Model {
         $query = $this->db->get('inquilinos', 10);
         return $query->result();
     }
+    
+    public function getInquilinoById($Id)
+    {       
+        $qry = "select * from inquilinos where id = '" . $Id . "'";
+        $query = $this->db->query($qry);
+        return $query->result();
+    }    
 }

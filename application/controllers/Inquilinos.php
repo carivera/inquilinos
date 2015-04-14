@@ -30,8 +30,15 @@ class Inquilinos extends CI_Controller{
         
         if(!isset($id))
         {
-            
+            echo '<h1>Inquilino incorrecto</h1>';
         }
-        
+        else
+        {
+            $this->load->model('Inquilinos/InquilinosModel');
+            $arr['data'] = $this->InquilinosModel->getInquilinoById($id);
+            
+            $this->load->view('Inquilinos/edit', $arr);
+        }
+      
     }
 }

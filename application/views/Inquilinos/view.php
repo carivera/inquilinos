@@ -12,7 +12,7 @@
 <div id="inquilinos"> 
     
 <h1>Listado de Inquilinos</h1>
-
+<div class="col-md-6">  
     <table class="table table-hover table-bordered table-striped">
         <thead>
         <th>ID</th>
@@ -29,14 +29,15 @@
                 echo '<tr><td>' . $inquilino->id . '</td>';
                 echo '<td>' . $inquilino->first_name . '</td>';
                 echo '<td>' . $inquilino->last_name . '</td>';
-                echo '<td>' . $inquilino->personal_id . '</td>';
+                echo '<td>' . anchor('inquilinos/edit/'. $inquilino->id, $inquilino->personal_id) . '</td>';
                 echo '<td>' . $inquilino->tel . '</td>';
                 echo '<td>' . $inquilino->cel . '</td>';
-                echo '<td>' . date_format(date($inquilino->created_date), 'M/Y') . '</td>';
+                echo '<td>' . $inquilino->created_date . '</td>';
                 echo '</tr>';
             }
 
         ?>
     </table>
+  </div> 
 </div>
 </html>
